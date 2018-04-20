@@ -9,6 +9,8 @@ var gulp = require('gulp'),
 	postcss = require('gulp-postcss'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
+        //added to prevent caching, which requires hard refresh
+        cache = require('gulp-cache'),
 
 	// Only work with new or updated files
 	newer = require('gulp-newer'),
@@ -51,6 +53,18 @@ gulp.task('javascript', function() {
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'))
 	.pipe(gulp.dest(js));
+});
+
+//function to clear cache before browser sync refresh
+gulp.task('clearCache', function() {
+
+  // Still pass the files to clear cache for
+  //gulp.src('./lib/*.js')
+  //.pipe(cache.clear());
+
+  // Or, just call this for everything
+  cache.clearAll();
+
 });
 
 
