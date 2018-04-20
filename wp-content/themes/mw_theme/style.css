@@ -830,8 +830,6 @@ a:hover, a:active {
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
-.site-header:before,
-.site-header:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
@@ -844,7 +842,6 @@ a:hover, a:active {
 .clear:after,
 .entry-content:after,
 .comment-content:after,
-.site-header:after,
 .site-content:after,
 .site-footer:after {
 	clear: both;
@@ -961,6 +958,8 @@ and open the template in the editor.
 	}
 	.site-branding {
 		width: 35%;
+		-ms-flex: 1 0 auto;
+		    flex: 1 0 auto;
 	}
 }
 
