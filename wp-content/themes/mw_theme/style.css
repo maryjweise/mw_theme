@@ -904,6 +904,28 @@ and open the template in the editor.
 
 .site-branding {
 	min-height: 65px;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.custom-logo-link {
+	margin-right: 1em;
+}
+
+.custom-logo-link img {
+	display: block;
+	height: 65px;
+	width: auto;
+}
+
+.site-branding__text {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	height: 65px;
 }
 
 .site-title {
