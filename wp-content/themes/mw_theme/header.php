@@ -23,7 +23,11 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mw_theme' ); ?></a>
-
+        <?php if(is_front_page() && get_header_image()):?>
+            <figure class="header-image">
+                <?php the_header_image_tag(); ?>
+            </figure>
+        <?php endif; //end header image check?>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
