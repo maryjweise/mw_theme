@@ -14,6 +14,7 @@ and open the template in the editor.
 	font-family: $font__sans;
 	color: #fff;
 	background-color: $color__skin;
+        text-align:center;
 	
 	@media screen and (min-width: $query__small) {
 		padding: 1em 2em;

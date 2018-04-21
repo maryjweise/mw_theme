@@ -975,6 +975,7 @@ and open the template in the editor.
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	color: #fff;
 	background-color: #002254;
+	text-align: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -1017,6 +1018,8 @@ and open the template in the editor.
 	margin: 0;
 	padding-top: 1em;
 	padding-left: 0;
+	-ms-flex-pack: center;
+	    justify-content: center;
 }
 
 .social-navigation ul ul {
