@@ -14,6 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+            <nav id="footer-navigation" class="social-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mw_theme' ); ?></button>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'menu-2',
+				'menu_id'        => 'social-menu',
+			) );
+			?>
+		</nav><!-- #site-navigation -->
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mw_theme' ) ); ?>">
 				<?php

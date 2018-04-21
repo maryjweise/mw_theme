@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 21, 2018, 6:34:16 AM
+    Author     : Mary
+*/
+
+.site-footer {
+	position: relative;
+	padding: 1em;
+	font-family: $font__sans;
+	color: #fff;
+	background-color: $color__skin;
+	
+	@media screen and (min-width: $query__small) {
+		padding: 1em 2em;
+	}
+}
+
+@media screen and (min-width: $query__medium) {
+	.site-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+/*
+Footer Menu
+*/
+@import "footer-menu";
