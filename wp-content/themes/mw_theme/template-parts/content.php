@@ -23,10 +23,10 @@
 			?>
 			<div class="entry-meta">
 				<?php
-                                mw_theme_posted_by();?>&nbsp;
-				<?php mw_theme_posted_on();?>&nbsp;
-                                <?php mw_theme_comments_meta();?>&nbsp;
-                                <?php mw_theme_post_edit();?>
+                                mw_theme_posted_by();
+				mw_theme_posted_on();
+                                mw_theme_comments_meta();
+                                mw_theme_post_edit();?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
