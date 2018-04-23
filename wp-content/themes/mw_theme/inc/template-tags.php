@@ -26,7 +26,7 @@ if ( ! function_exists( 'mw_theme_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'mw_theme' ),
+			esc_html_x( 'Published %s', 'post date', 'mw_theme' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -42,13 +42,60 @@ if ( ! function_exists( 'mw_theme_posted_by' ) ) :
 	function mw_theme_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'mw_theme' ),
+			esc_html_x( 'Written by %s', 'post author', 'mw_theme' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
+endif;
+
+if (! function_exists('mw_theme_comments_meta')) :
+    /*
+     * If post has comments, print linked comment count for current post
+     */
+    function mw_theme_comments_meta(){
+        if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+            echo '<span class="comments-link">';
+            comments_popup_link(
+                    sprintf(
+                            wp_kses(
+                                    /* translators: %s: post title */
+                                    __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'mw_theme' ),
+                                    array(
+                                            'span' => array(
+                                                    'class' => array(),
+                                            ),
+                                    )
+                            ),
+                            get_the_title()
+                    )
+            );
+            echo '</span>';
+        }
+    }
+endif;
+
+if ( ! function_exists('mw_theme_post_edit')):
+    function mw_theme_post_edit(){
+        edit_post_link(
+            sprintf(
+                    wp_kses(
+                            /* translators: %s: Name of current post. Only visible to screen readers */
+                            __( 'Edit <span class="screen-reader-text">%s</span>', 'mw_theme' ),
+                            array(
+                                    'span' => array(
+                                            'class' => array(),
+                                    ),
+                            )
+                    ),
+                    get_the_title()
+            ),
+            '<span class="edit-link">',
+            '</span>'
+        );
+    }
 endif;
 
 if ( ! function_exists( 'mw_theme_entry_footer' ) ) :
@@ -66,42 +113,6 @@ if ( ! function_exists( 'mw_theme_entry_footer' ) ) :
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'mw_theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'mw_theme' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
-		}
-
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'mw_theme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 endif;
 
