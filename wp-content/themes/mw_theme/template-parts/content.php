@@ -22,16 +22,10 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php
-                                mw_theme_posted_by();
-				mw_theme_posted_on();
-                                mw_theme_comments_meta();
-                                mw_theme_post_edit();?>
+				<?php mw_theme_posted_on();?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php mw_theme_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

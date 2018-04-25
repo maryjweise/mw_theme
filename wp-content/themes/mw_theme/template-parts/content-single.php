@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php mw_theme_category_list(); ?>
+		<?php mw_theme_the_category_list(); ?>
 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -22,10 +22,7 @@
 		if ( is_active_sidebar('sidebar-1') ) : ?>
 		<div class="entry-meta">
 			<?php  
-                         mw_theme_posted_by();
                          mw_theme_posted_on();
-                         mw_theme_comments_meta();
-                         mw_theme_post_edit();
                          ?>
 		</div><!-- .entry-meta -->
 		<?php
@@ -34,13 +31,10 @@
 
 	<section class="post-content">
             <?php if ( !is_active_sidebar('sidebar-1') ) : ?>
-            <div class="post_content__wrap">
+            <div class="post-content__wrap">
 		<div class="entry-meta">
 			<?php  
-                         mw_theme_posted_by();
                          mw_theme_posted_on();
-                         mw_theme_comments_meta();
-                         mw_theme_post_edit();
                          ?>
 		</div><!-- .entry-meta -->
                 <div class="post-content__body">
