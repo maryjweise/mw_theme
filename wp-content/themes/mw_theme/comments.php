@@ -32,21 +32,19 @@ if ( post_password_required() ) {
 			if ( '1' === $mw_theme_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'mw_theme' ),
+					esc_html__( 'One comment', 'mw_theme' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $mw_theme_comment_count, 'comments title', 'mw_theme' ) ),
+					esc_html( _nx( '%1$s comment', '%1$s comments', $mw_theme_comment_count, 'comments title', 'mw_theme' ) ),
 					number_format_i18n( $mw_theme_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
 			?>
 		</h2><!-- .comments-title -->
-
-		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
