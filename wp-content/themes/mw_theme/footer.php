@@ -13,13 +13,7 @@
 
 	</div><!-- #content -->
         
- <?php if ( is_active_sidebar( 'footer-widgets' ) ) {?>
-
-            <section id="footer-widgets" class="widget-area">
-                    <?php dynamic_sidebar( 'footer-widgets' ); ?>
-            </section><!-- #footer-widgets -->
-            <?php }
-            ?>
+        <?php get_sidebar('footer');?>
 	<footer id="colophon" class="site-footer">
            
             <nav id="footer-navigation" class="social-navigation">
