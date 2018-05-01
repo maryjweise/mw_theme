@@ -203,3 +203,20 @@
 	line-height: 1.3em;
 }
 
+/* Footer Widget Area */
+#footer-widgets {
+    background-color:darkgray;
+    color:white;
+    padding:15px;
+    display:flex;
+    flex-flow:row wrap;
+    
+    a {
+        color:white;
+    }
+    
+    .widget {
+        width:25%;
+        padding:15px;
+    }
+}

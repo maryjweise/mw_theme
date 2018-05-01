@@ -1906,6 +1906,26 @@ button.dropdown-toggle {
 	line-height: 1.3em;
 }
 
+/* Footer Widget Area */
+#footer-widgets {
+	background-color: darkgray;
+	color: white;
+	padding: 15px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+}
+
+#footer-widgets a {
+	color: white;
+}
+
+#footer-widgets .widget {
+	width: 25%;
+	padding: 15px;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/

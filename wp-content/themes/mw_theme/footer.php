@@ -12,8 +12,16 @@
 ?>
 
 	</div><!-- #content -->
+        
+ <?php if ( is_active_sidebar( 'footer-widgets' ) ) {?>
 
+            <section id="footer-widgets" class="widget-area">
+                    <?php dynamic_sidebar( 'footer-widgets' ); ?>
+            </section><!-- #footer-widgets -->
+            <?php }
+            ?>
 	<footer id="colophon" class="site-footer">
+           
             <nav id="footer-navigation" class="social-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mw_theme' ); ?></button>
 			<?php
