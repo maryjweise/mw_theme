@@ -49,5 +49,23 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-    </div>
+        <div class="continue-reading">
+            <?php 
+            $read_more_link = sprintf(
+                    wp_kses(
+                            /* translators: %s: Name of current post. Only visible to screen readers */
+                            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'mw_theme' ),
+                            array(
+                                    'span' => array(
+                                            'class' => array(),
+                                    ),
+                            )
+                    ),
+                    get_the_title()
+            );?>
+            <a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
+            <?php echo $read_more_link;?>
+            </a>
+        </div>
+    </div><!-- .post__content-->
 </article><!-- #post-<?php the_ID(); ?> -->

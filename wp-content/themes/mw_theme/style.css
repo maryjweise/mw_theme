@@ -1113,6 +1113,7 @@ and open the template in the editor.
 
 .archive-view .post {
 	background-color: white;
+	position: relative;
 }
 
 .archive-view .post__content {
@@ -1134,6 +1135,26 @@ and open the template in the editor.
 	.archive-view.has-sidebar .site-content .widget-area {
 		width: 30%;
 	}
+}
+
+.continue-reading {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}
+
+.continue-reading a {
+	display: block;
+	padding: .5em 1em;
+	font-size: 90%;
+	text-decoration: none;
+	background: #d9d9d9;
+}
+
+.continue-reading a:focus, .continue-reading a:hover {
+	color: white;
+	background: #b51c35;
 }
 
 /*--------------------------------------------------------------
