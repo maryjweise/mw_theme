@@ -1162,12 +1162,29 @@ and open the template in the editor.
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 	}
+	.archive-view.has-sidebar .site-content .page-header {
+		width: 100%;
+		-ms-flex: 1 0 100%;
+		    flex: 1 0 100%;
+	}
 	.archive-view.has-sidebar .site-content .content-area {
 		width: 60%;
 	}
 	.archive-view.has-sidebar .site-content .widget-area {
 		width: 30%;
 	}
+}
+
+.page-header {
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+}
+
+.page-title {
+	margin: 0 0 .5em;
+}
+
+.archive-description {
+	margin: -1em 0 2em;
 }
 
 .sticky::before {
