@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="post__content">
 	<header class="entry-header">
             <?php mw_theme_the_category_list();?>
 		<?php
@@ -48,8 +49,5 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php mw_theme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->

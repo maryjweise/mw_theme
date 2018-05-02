@@ -13,29 +13,30 @@
 }
 
 @media screen and (min-width: $query__medium) {
-	.has-sidebar {
-		
-		.hentry {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			
-			.entry-header {
-				width: 100%;
-				flex: 1 0 100%;
-			}
-			
-			.post-content {
-				width: $size__ratio-large;
-			}
-			
-			.widget-area {
-				width: $size__ratio-small;
-			}
-		}
-		
-	}
-        .no-sidebar {
+    .single {    
+            &.has-sidebar {
+
+                    .hentry {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            .entry-header {
+                                    width: 100%;
+                                    flex: 1 0 100%;
+                            }
+
+                            .post-content {
+                                    width: $size__ratio-large;
+                            }
+
+                            .widget-area {
+                                    width: $size__ratio-small;
+                            }
+                    }
+
+            }
+        &.no-sidebar {
             
             .post-content__wrap {
                 display:flex;
@@ -51,4 +52,5 @@
                 }
             }
         }
+    }
 }
