@@ -1137,6 +1137,16 @@ and open the template in the editor.
 	}
 }
 
+.index-img img {
+	display: block;
+	margin: 0 auto;
+}
+
+.index-img a:focus > img,
+.index-img a:hover > img {
+	opacity: .8;
+}
+
 .continue-reading {
 	position: absolute;
 	right: 0;
