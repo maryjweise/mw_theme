@@ -14,45 +14,39 @@
 
 get_header();
 ?>
+<?php if ( have_posts() ) : ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main" role="main">
 
 		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
+			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-				<?php
+
+			<?php
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) : the_post();
 
 				/*
-				 * Include the Post-Type-specific template for the content.
+				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
 
 			the_posts_pagination( array(
-                            'prev_text' => __( 'Newer', 'mw_theme'),
-                            'next_text' => __( 'Older', 'mw_theme'),
-                            'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'mw_theme') . '</span>',
-                        ));
+				'prev_text' => __( 'Newer', 'mw_theme' ),
+				'next_text' => __( 'Older', 'mw_theme' ),
+				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'mw_theme' ) . '</span>',
+			));
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
 		?>
 
 		</main><!-- #main -->
@@ -61,3 +55,11 @@ get_header();
 <?php
 get_sidebar();
 get_footer();
+
+
+else :
+
+	get_template_part( 'template-parts/content', 'none' );
+	return;
+
+endif;

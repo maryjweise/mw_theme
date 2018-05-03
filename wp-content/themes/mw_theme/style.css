@@ -1144,9 +1144,10 @@ and open the template in the editor.
 	background-color: #eee;
 }
 
-.archive-view .post, .archive-view .page {
-	background-color: white;
+.archive-view .post,
+.archive-view .page {
 	position: relative;
+	background: white;
 }
 
 .archive-view .post__content {
@@ -1162,15 +1163,15 @@ and open the template in the editor.
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 	}
-	.archive-view.has-sidebar .site-content .page-header {
+	.archive-view.has-sidebar .page-header {
 		width: 100%;
 		-ms-flex: 1 0 100%;
 		    flex: 1 0 100%;
 	}
-	.archive-view.has-sidebar .site-content .content-area {
+	.archive-view.has-sidebar .content-area {
 		width: 60%;
 	}
-	.archive-view.has-sidebar .site-content .widget-area {
+	.archive-view.has-sidebar .widget-area {
 		width: 30%;
 	}
 }
@@ -1187,6 +1188,33 @@ and open the template in the editor.
 	margin: -1em 0 2em;
 }
 
+/* For content-none.php */
+.search .page-content,
+.error-404 .page-content {
+	margin-bottom: 2em;
+	padding: 1em 2em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: white;
+	background: #b51c35;
+}
+
+.search input[type="search"],
+.error-404 input[type="search"] {
+	padding: .5em;
+}
+
+.search input[type="submit"],
+.error-404 input[type="submit"] {
+	border-color: white;
+	color: white;
+}
+
+.search input[type="submit"]:focus, .search input[type="submit"]:hover,
+.error-404 input[type="submit"]:focus,
+.error-404 input[type="submit"]:hover {
+	color: black;
+}
+
 .sticky::before {
 	content: "";
 	display: block;
@@ -1201,13 +1229,13 @@ and open the template in the editor.
 	box-shadow: -1px 2px 2px rgba(26, 26, 26, 0.1);
 }
 
-.index-img img {
+.index-image img {
 	display: block;
 	margin: 0 auto;
 }
 
-.index-img a:focus > img,
-.index-img a:hover > img {
+.index-image a:focus > img,
+.index-image a:hover > img {
 	opacity: .8;
 }
 
