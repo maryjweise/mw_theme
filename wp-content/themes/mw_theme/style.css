@@ -1144,7 +1144,7 @@ and open the template in the editor.
 	background-color: #eee;
 }
 
-.archive-view .post {
+.archive-view .post, .archive-view .page {
 	background-color: white;
 	position: relative;
 }
