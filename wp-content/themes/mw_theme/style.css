@@ -1178,15 +1178,15 @@ and open the template in the editor.
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 	}
-	.archive-view.has-sidebar .page-header {
+	.archive-view.has-sidebar .site-content .page-header {
 		width: 100%;
 		-ms-flex: 1 0 100%;
 		    flex: 1 0 100%;
 	}
-	.archive-view.has-sidebar .content-area {
+	.archive-view.has-sidebar .site-content .content-area {
 		width: 60%;
 	}
-	.archive-view.has-sidebar .widget-area {
+	.archive-view.has-sidebar .site-content .widget-area {
 		width: 30%;
 	}
 }
@@ -2167,6 +2167,49 @@ object {
 	margin: 0;
 	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	border: none;
+}
+
+/*--------------------------------------------------------------
+## Icons
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*# sourceMappingURL=../mw_theme/sass/maps/style.css.map */

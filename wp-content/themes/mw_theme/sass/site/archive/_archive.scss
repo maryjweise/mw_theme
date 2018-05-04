@@ -27,19 +27,20 @@ and open the template in the editor.
 				display: flex;
 				justify-content: space-between;
 				flex-wrap: wrap;
-			}
 			
-			.page-header {
-				width: 100%;
-				flex: 1 0 100%;
-			}
-			.content-area {
-				width: $size__ratio-large;
-			}
 			
-			.widget-area {
-				width: $size__ratio-small;
-			}
+                                .page-header {
+                                        width: 100%;
+                                        flex: 1 0 100%;
+                                }
+                                .content-area {
+                                        width: $size__ratio-large;
+                                }
+
+                                .widget-area {
+                                        width: $size__ratio-small;
+                                }
+                        }
 			
 		}
 	}
