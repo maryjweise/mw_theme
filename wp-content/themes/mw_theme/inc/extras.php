@@ -31,6 +31,13 @@ function humescores_body_classes( $classes ) {
         } else {
             $classes[] = 'no-sidebar';
         }
+        
+        //add a class telling us if the page sidebar is in use
+        if (is_active_sidebar('page-widgets')){
+            $classes[] = 'page-has-sidebar';
+        } else {
+            $classes[] = 'page-no-sidebar';
+        }
 
 	return $classes;
 }

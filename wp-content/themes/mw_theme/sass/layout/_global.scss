@@ -53,4 +53,34 @@
             }
         }
     }
+    .page {    
+            &.page-has-sidebar {
+
+                    .site-main {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            flex-direction:row-reverse;
+                            .entry-header {
+                                    width: 100%;
+                                    flex: 1 0 100%;
+                            }
+
+                            .hentry {
+                                    width: $size__ratio-large;
+                            }
+
+                            .widget-area {
+                                    width: $size__ratio-small;
+                            }
+                    }
+
+            }
+        &.page-no-sidebar {
+            
+            .hentry {
+                width:100%;
+            }
+        }
+    }
 }
