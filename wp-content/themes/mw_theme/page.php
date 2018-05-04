@@ -31,7 +31,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-                <?php get_sidebar('page'); ?>
+                
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
