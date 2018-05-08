@@ -16,28 +16,28 @@
         <?php get_sidebar('footer');?>
 	<footer id="colophon" class="site-footer">
            
-            <nav id="footer-navigation" class="social-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mw_theme' ); ?></button>
+            <div class="site-footer__wrap">
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-2',
-				'menu_id'        => 'social-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mw_theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'mw_theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'mw_theme' ), 'mw_theme', '<a href="http://maryweise.com">Mary Weise</a>' );
-				?>
-		</div><!-- .site-info -->
+			// Make sure there is a social menu to display.
+			if ( has_nav_menu( 'social' ) ) : ?>
+					<nav class="social-menu" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'mw_theme' ); ?>">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'menu_class'     => 'social-links-menu',
+								'depth'          => 1,
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>' . mw_theme_get_svg( array( 'icon' => 'chain' ) ),
+							) );
+						?>
+					</nav><!-- .social-navigation -->
+				<?php endif;?>
+
+			<div class="site-info">
+				<div><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mw_theme' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'mw_theme' ), 'WordPress' ); ?></a></div>
+				<div><?php printf( esc_html__( 'Theme: %1$s by %2$s', 'mw_theme' ), 'mw_theme', '<a href="https://maryweisedev.com" rel="designer">Mary Weise</a>' ); ?></div>
+			</div><!-- .site-info -->
+		</div><!-- .site-footer__wrap -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

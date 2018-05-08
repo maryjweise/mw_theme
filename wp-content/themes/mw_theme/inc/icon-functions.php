@@ -124,22 +124,21 @@ function mw_theme_get_svg( $args = array() ) {
  * @return string  $item_output The menu item output with social icon.
  */
 function mw_theme_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
-	// Get supported social icons.
-	$social_icons = mw_theme_social_links_icons();
-
-	// Change SVG icon inside social links menu if there is supported URL.
-	if ( 'social-menu' === $args->theme_location ) {
-		foreach ( $social_icons as $attr => $value ) {
-			if ( false !== strpos( $item_output, $attr ) ) {
-				$item_output = str_replace( $args->link_after, '</span>' . mw_theme_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
-			}
-		}
+	        // Get supported social icons.
+	        $social_icons = mw_theme_social_links_icons();
+	
+	        // Change SVG icon inside social links menu if there is supported URL.
+	        if ( 'social' === $args->theme_location ) {
+	                foreach ( $social_icons as $attr => $value ) {
+	                        if ( false !== strpos( $item_output, $attr ) ) {
+	                                $item_output = str_replace( $args->link_after, '</span>' . mw_theme_get_svg( array( 'icon' => esc_attr( $value ) ) ), $item_output );
+	                        }
+	                }
+	        }
+	
+	        return $item_output;
 	}
-
-	return $item_output;
-}
 add_filter( 'walker_nav_menu_start_el', 'mw_theme_nav_menu_social_icons', 10, 4 );
-
 
 /**
  * Returns an array of supported social links (URL and icon name).
