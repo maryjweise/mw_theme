@@ -44,8 +44,8 @@ endif; ?>
 			endwhile;
 
 			the_posts_pagination( array(
-				'prev_text' => mw_theme_get_svg(array( 'icon' => 'arrow-left')) . __( ' Newer', 'mw_theme' ),
-				'next_text' => __( 'Older ', 'mw_theme' ) . mw_theme_get_svg(array( 'icon' => 'arrow-right')),
+				'prev_text' => mw_theme_get_svg(array( 'icon' => 'arrow-long-left')) . __( ' Newer', 'mw_theme' ),
+				'next_text' => __( 'Older ', 'mw_theme' ) . mw_theme_get_svg(array( 'icon' => 'arrow-long-right')),
 				'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'mw_theme' ) . '</span>',
 			));
 
