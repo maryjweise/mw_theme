@@ -2241,6 +2241,14 @@ SVG Fallbacks
 	display: inline-block;
 }
 
+.no-svg .svg-fallback.icon-arrow-long-left:before {
+	content: "←";
+}
+
+.no-svg .svg-fallback.icon-arrow-long-right:before {
+	content: "→";
+}
+
 /* Social Menu fallbacks */
 .no-svg .social-menu a {
 	height: auto;
