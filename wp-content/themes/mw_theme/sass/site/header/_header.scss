@@ -75,6 +75,10 @@
 		width: 35%;
 		flex: 1 0 auto;
 	}
+        .site-branding .custom-logo-link,
+        .site-branding .site-branding__text {
+            flex:1 0 auto;
+        }
 	
 	.site-navigation {
 		width: 55%;

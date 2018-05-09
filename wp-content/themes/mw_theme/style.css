@@ -987,6 +987,11 @@ a:hover, a:active {
 		-ms-flex: 1 0 auto;
 		    flex: 1 0 auto;
 	}
+	.site-branding .custom-logo-link,
+	.site-branding .site-branding__text {
+		-ms-flex: 1 0 auto;
+		    flex: 1 0 auto;
+	}
 	.site-navigation {
 		width: 55%;
 	}
