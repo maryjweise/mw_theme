@@ -82,6 +82,9 @@ if ( ! function_exists( 'mw_theme_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+                
+                /* Editor Styles */
+                add_editor_style(array( 'inc/editor-styles.css', mw_theme_fonts_url()));
 	}
 endif;
 add_action( 'after_setup_theme', 'mw_theme_setup' );
