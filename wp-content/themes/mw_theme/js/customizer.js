@@ -46,13 +46,16 @@
 			$( 'button.menu-toggle:hover,button.menu-toggle:focus' ).css( {
 				'background-color:': to
 			} );
+                        $( '.social-menu a').css({
+                            'color': to
+                        });
 		} );
 	} );
 
 	// Background color for header and footer.
 	wp.customize( 'theme_bg_color', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-header, .site-footer' ).css( {
+			$( '.site-header, .site-footer, .sub-menu' ).css( {
 				'background-color': to
 			} );
 		} );

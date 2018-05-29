@@ -23,12 +23,8 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mw_theme' ); ?></a>
-        <?php if(is_front_page() && get_header_image()):?>
-            <figure class="header-image">
-                <?php the_header_image_tag(); ?>
-            </figure>
-        <?php endif; //end header image check?>
-	<header id="masthead" class="site-header">
+        
+	<header id="masthead" class="site-header sticky-header">
 		<div class="site-branding">
 			<?php the_custom_logo();?>
                         <div class="site-branding__text">
@@ -41,12 +37,7 @@
 				?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
-			endif;
-			$mw_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $mw_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $mw_theme_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			endif;?>
                     </div><!-- .site-branding__text-->
 		</div><!-- .site-branding -->
 
@@ -60,5 +51,15 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
+        <?php if(is_front_page() && get_header_image()):?>
+        <div class="header-image" style="background-image:url('<?php echo get_header_image();?>');">
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php $mw_theme_description = get_bloginfo( 'description', 'display' );
+                if ( $mw_theme_description || is_customize_preview() ) :
+                        ?>
+                        
+                        <p class="site-description"><?php echo $mw_theme_description; /* WPCS: xss ok. */ ?></p>
+                <?php endif; ?>
+        </div>
+        <?php endif; //end header image check?>
 	<div id="content" class="site-content">

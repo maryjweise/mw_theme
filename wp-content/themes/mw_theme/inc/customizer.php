@@ -165,7 +165,8 @@ function mw_theme_header_style() {
 			button.dropdown-toggle,
 			.menu-toggle,
 			.site-footer,
-			.site-footer a {
+			.site-footer a,
+                        .social-menu ul a {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 
@@ -179,6 +180,8 @@ function mw_theme_header_style() {
 				color: <?php echo esc_attr( $header_bg_color ); ?>;
 				background-color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
+                        
+                            
 		</style>
 		<?php
 	}
@@ -189,7 +192,8 @@ function mw_theme_header_style() {
 	if ( '#002254' != $header_bg_color ) { ?>
 		<style type="text/css">
 			.site-header,
-			.site-footer {
+			.site-footer,
+                        .main-navigation .sub-menu {
 				background-color: <?php echo esc_attr( $header_bg_color ); ?>;
 			}
 		</style>

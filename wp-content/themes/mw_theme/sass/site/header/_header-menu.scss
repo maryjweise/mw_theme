@@ -8,7 +8,7 @@
 	ul {
 		display: none;
 		list-style: none;
-		margin: 0;
+		margin: 15px 0;
 		padding-top: 1em;
 		padding-left: 0;
 
@@ -32,6 +32,7 @@
 
 			a {
 				width: 200px;
+                                
 			}
 		}
 
@@ -47,15 +48,19 @@
 
 	a {
 		display: inline-block;
-		width: 100%;
-		padding: .5em 1em .5em 0;
+		width: auto;
+		padding: .5em .25em .5em .25em;
+                margin: 0 .25em;
 		text-decoration: none;
 		color: #fff;
+                font-size: 1rem;
+                font-weight:600;
+                border-bottom:2px solid white;
 	}
 
 	a:hover,
 	a:focus {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 	.current_page_item > a,
@@ -99,8 +104,9 @@ button.dropdown-toggle {
 
 /* Toggle small menu and children on */
 .toggled-on ul,
-.children.toggled-on {
+.sub-menu.toggled-on {
 	display: block;
+        position:absolute;
 }
 
 @media screen and (min-width: $query__small) {
@@ -139,7 +145,8 @@ button.dropdown-toggle {
 			li {
 
 				a {
-					padding: .4em 1em;
+					padding: .4em .5em;
+                                        margin: 0 .5em;
 				}
 			}
 		}

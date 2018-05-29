@@ -21,6 +21,17 @@
 	if ( true === supportsInlineSVG() ) {
 		document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 	}
+        
+        $(document).on("scroll", function(){
+		if
+        ($(document).scrollTop() > 100){
+		  $("header").addClass("shrink");
+		}
+		else
+		{
+			$("header").removeClass("shrink");
+		}
+	});
 })(jQuery);
 
 
